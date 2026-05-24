@@ -118,7 +118,12 @@ export const MeController = async (req, res) => {
     try {
         res.status(200).json({
             message: "User data retrieved successfully",
-            user: req.user
+            user: {
+                id : req.user._id,
+                username : req.user.username,
+                email : req.user.email,
+                role : req.user.role
+            }
         })
         
     } catch (error) {
