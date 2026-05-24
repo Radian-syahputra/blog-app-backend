@@ -113,3 +113,18 @@ export const LogoutUserController = async (req, res) => {
         })
     }
 }
+
+export const MeController = async (req, res) => {
+    try {
+        res.status(200).json({
+            message: "User data retrieved successfully",
+            user: req.user
+        })
+        
+    } catch (error) {
+        res.status(500).json({
+            message: "Failed to get user data",
+            error: error.message
+        })
+    }
+}
