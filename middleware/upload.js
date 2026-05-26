@@ -4,7 +4,12 @@ import cloudinary from "../config/cloudinary.js";
 
 const storage = multer.memoryStorage()
 
-const upload = multer({ storage: storage })
+const upload = multer({ 
+    storage: storage,
+    limits: {
+        fieldSize: 25 * 1024 * 1024 // ✅ 25MB limit untuk field value
+    }
+})
 
 // Untuk thumbnail (Buffer dari req.file)
 const uploadBufferToCloudinary = (fileBuffer, folder) => {
