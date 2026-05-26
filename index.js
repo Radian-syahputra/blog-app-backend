@@ -9,7 +9,7 @@ import blogRoute from "./routes/blogRoute.js";
 import commentRoute from "./routes/commentRoute.js";
 
 const app = express()
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 app.use(cors({
     origin: 'http://localhost:5173',
